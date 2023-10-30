@@ -2,9 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="/./style.css">
+<title>EditarProjeto</title>
 </head>
 <body>
-
+<h1>Editar Projeto/h1>
+	<form th:action="@{/projeto/{id}(id=${projeto.id})}" th:object="${projeto}" method="POST">
+		<label>Nome</label>
+		<input type="text" name="nome" th:field="*{nome}" class="Caixa1" required><br>
+		<label>Atividade</label>
+		<input type="text" name="atividade" th:field="*{atividade}" class="Caixa1" required><br>
+		<label>Data Inicial</label>
+		<input type="text" name="dataI" th:field="*{dataI}" class="Caixa1" required><br>
+		<label>Data Final</label>
+		<input type="text" name="dataF" th:field="*{dataF}"  class="Caixa1" required><br>
+		<label>Dependência</label>
+		<input type="text" name="depende" th:field="*{depende}"  class="Caixa1" required><br>
+		<input type="submit" class="Botao1" value="Atualizar" onclick="validar()">
+	</form>
+	<script src="static/validador.js"></script>
 </body>
 </html>
